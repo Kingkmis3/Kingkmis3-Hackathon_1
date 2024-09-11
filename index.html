@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Montserrat:400,700&display=swap" rel="stylesheet">
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styling */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Navigation Styling */
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #007BFF;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Headings */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        /* Unordered List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1em;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+        }
+
+        /* Two-column layout for the Education section */
+        .education-container {
+            display: flex; /* Use Flexbox for layout */
+            justify-content: space-between; /* Space between columns */
+            gap: 20px; /* Space between the columns */
+            margin-top: 20px;
+        }
+
+        .education-left, .education-right {
+            flex: 1; /* Equal width for both columns */
+        }
+
+        .education-left ul, .education-right ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        .education-left li, .education-right li {
+            margin-bottom: 15px;
+        }
+
+        /* Adjust for smaller screens */
+        @media (max-width: 768px) {
+            .education-container {
+                flex-direction: column; /* Stack columns on smaller screens */
+            }
+        }
+
+        /* Form Styling */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+
+        form label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensure padding and borders are included in total width and height */
+            transition: border-color 0.3s ease;
+        }
+
+        /* Input Focus Styling */
+        form input:focus, form textarea:focus {
+            border-color: #007BFF; /* Blue border on focus */
+            outline: none; /* Remove default focus outline */
+        }
+
+        /* Button Styling */
+        form button {
+            display: block;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        /* Project Section Styling */
+        #projects {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Project List Styling */
+        .project-list {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+        }
+
+        .project-list li {
+            margin-bottom: 15px; /* Space between project links */
+        }
+
+        /* Project Link Styling */
+        .project-link {
+            font-size: 1.1em;
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block; /* Makes the link behave like a block for hover effect */
+        }
+
+        .project-link:hover {
+            color: #0056b3; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            My name is <strong>Chimo Ibrahim Abdullahi</strong>, and I live in Abuja, Nigeria. I have a <strong>National Diploma</strong> and a <strong>B.Eng in Civil Engineering</strong>. Growing up, I was always fascinated by how objects can be integrated into systems and how these integrations are controlled technologically. 
+        </p>
+        <p>
+            I am motivated and driven by the potential of technology to detect defects in civil engineering structures. This interest has led me to explore <strong>Structural Health Monitoring (SHM)</strong> systems and other advancements as technology continues to expand its horizons in our daily lives. My aim is to harmonize technology across various aspects of civil engineering structures and project management systems.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Programming Languages</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>HTML & CSS</li>
+            <li>SQL</li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Educational Background</h2>
+        <div class="education-container">
+            <!-- Left Column -->
+            <div class="education-left">
+                <ul>
+                    <li>
+                        <strong>Bachelor of Engineering (B.Eng) in Civil Engineering</strong><br>
+                        Abubakar Tafawa Balewa University, Bauchi, Nigeria<br>
+                        <em>2017 – 2021</em>
+                    </li>
+                    <li>
+                        <strong>National Diploma in Civil Engineering</strong><br>
+                        Federal Polytechnic, Nasarawa, Nigeria<br>
+                        <em>2014 - 2016</em>
+                    </li>
+                    <li>
+                        <strong>Research Project on Structural Health Monitoring (SHM)</strong><br>
+                        Abubakar Tafawa Balewa University, Bauchi, Nigeria<br>
+                        <em>2023</em>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Column -->
+            <div class="education-right">
+                <ul>
+                    <li>
+                        <strong>Training in Project Management</strong><br>
+                        Online Course - Coursera
+                    </li>
+                    <li>
+                        <strong>Certificate in Data Analysis</strong><br>
+                        Online Course - Coursera
+                    </li>
+                    <li>
+                        <strong>Training in Data Analysis</strong><br>
+                        Online Course - Udemy
+                    </li>
+                    <li>
+                        <strong>Training/Certificate in Software Development</strong><br>
+                        August - Scholarship
+                    </li>
+                    <li>
+                        <strong>FOREX Skill Training</strong><br>
+                        Platforms - Forex Factory, Babypips, books, and self-training<br>
+                        <em>2022-2024</em>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="interests">
+        <h2>Interests</h2>
+        <p>
+            I am particularly passionate about how technology brings innovations like <strong>Structural Health Monitoring (SHM)</strong> to life, ensuring the safety and integrity of infrastructure. As technology continues to expand its horizons, I am committed to integrating advanced tech solutions into civil engineering, optimizing the design, monitoring, and maintenance of structures. 
+        </p>
+        <p>
+            I am excited to be part of this ongoing transformation and to contribute to a future where technology and engineering work in harmony.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            <li>
+                <a href="https://github.com/PLP-WebTechnologies/introduction-to-css-Kingkmis3.git" target="_blank" class="project-link">Project 1: Basic web page creation and styling using HTML and CSS</a>
+            </li>
+            <li>
+                <a href="https://github.com/PLP-Database-Design/week-2-assignment-Kingkmis3.git" target="_blank" class="project-link">Project 2: Data retrieval and filtering with SQL</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="send-message.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="Chimo Ibrahim Abdullahi" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="ibrhimchimo78@gmail.com" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required>Let's connect and make a difference.</textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chimo Ibrahim Abdullahi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
